@@ -39,6 +39,7 @@ module.exports = {
         light: {
           colors: {
             foreground: "#FFFFFF",
+            danger: "#FB3535",
           },
         },
       },
