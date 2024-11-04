@@ -1,8 +1,52 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Next.js + NextUI",
-  description: "Make beautiful websites regardless of your design experience.",
+  name: "CapiTech",
+  description: "Aprendendo com quem aprende.",
+  menuItems: [
+    {
+      text: "Home",
+      href: "/",
+    },
+    {
+      text: "Fatec Votorantim",
+      href: "/vestibular",
+    },
+    {
+      text: "Contato",
+      href: "/contato",
+    },
+    {
+      text: "Sobre",
+      href: "/sobre",
+    },
+    {
+      text: "Login (Admin)",
+      href: "/admin",
+    },
+    {
+      text: "Cadastro (Admin)",
+      href: "/cadastro",
+    },
+  ],
+  footerItems: [
+    {
+      text: "Home",
+      href: "/",
+    },
+    {
+      text: "Fatec Votorantim",
+      href: "/vestibular",
+    },
+    {
+      text: "Contato",
+      href: "/contato",
+    },
+    {
+      text: "Sobre",
+      href: "/sobre",
+    },
+  ],
   navItems: [
     {
       label: "Home",
