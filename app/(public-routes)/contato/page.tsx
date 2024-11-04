@@ -24,7 +24,7 @@ export default function Contact() {
 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
-
+    
     if (!form.current) return;
     if (!serviceID || !templateID || !publicKey) return;
 
@@ -134,7 +134,10 @@ export default function Contact() {
             />
           </div>
 
-          <Button className="capiButtons flex items-center gap-2 text-white font-bold bg-capi_blue hover:bg-blue-400 shadow-xl">
+          <Button
+            className="capiButtons flex items-center gap-2 text-white font-bold bg-capi_blue hover:bg-blue-400 shadow-xl"
+            type="submit"
+          >
             {loading && <FaSpinner className="h-4 w-4 animate-spin" />}
             {success && <HiCheckCircle className="h4- w-4 animate-ping" />}
             Enviar
