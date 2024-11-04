@@ -16,7 +16,7 @@ export default function Header() {
   };
 
   return (
-    <header className="relative bg-capi_purple min-h-64 py-5 px-4 text-white">
+    <header className="relative bg-capi_purple min-h-64 py-5 px-4 text-white mb-0">
       <Button
         isIconOnly
         aria-label="Menu"
