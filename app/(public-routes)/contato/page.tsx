@@ -57,7 +57,7 @@ export default function Contact() {
         <img
           alt="Ícone de contato."
           className="hidden absolute left-28 w-16 sm:block"
-          src="/path/to/contactIcon" // Ajuste o caminho se necessário
+          src="/assets/contact/contactIcon.png"
         />
         <h2 className="font-headline font-semibold text-white text-4xl">
           Contato
