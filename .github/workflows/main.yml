@@ -13,7 +13,7 @@ jobs:
       - name: Checar repositório
         uses: actions/checkout@v2
         with:
-          token: ${{ secrets.GH_TOKEN }}
+          token: ${{ secrets.CAPITECHSEGREDO }}
           fetch-depth: 0
 
       - name: Configurar Node.js
