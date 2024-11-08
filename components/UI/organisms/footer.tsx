@@ -18,7 +18,7 @@ export default function Footer() {
         <ul className="flex flex-col gap-2 text-sm">
           {siteConfig.footerItems.map((link, i) => (
             <li key={`link-${i}`}>
-              <Link className="menuLinks" color="foreground" href={link.href}>
+              <Link className="menuLinks text-white font-bold" href={link.href}>
                 {link.text}
               </Link>
             </li>
