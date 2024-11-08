@@ -24,7 +24,7 @@ export default function Contact() {
 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!form.current) return;
     if (!serviceID || !templateID || !publicKey) return;
 
@@ -44,7 +44,7 @@ export default function Contact() {
           }, 10 * 1000);
         },
         (error: Error) => {
-          console.log("EMAIL FAILED:", error);
+          // console.log("EMAIL FAILED:", error);
           setError(true);
           setLoading(false);
         }
@@ -79,7 +79,7 @@ export default function Contact() {
               color="default"
               label="Nome"
               labelPlacement="outside"
-              placeholder="Digite seu nome"
+              // placeholder="Digite seu nome"
               type="text"
               value={name}
               variant="faded"
@@ -95,7 +95,7 @@ export default function Contact() {
               label="E-Mail"
               labelPlacement="outside"
               name="email"
-              placeholder="Digite seu e-mail"
+              // placeholder="Digite seu e-mail"
               type="email"
               value={email}
               variant="faded"
@@ -111,7 +111,7 @@ export default function Contact() {
               label="Assunto"
               labelPlacement="outside"
               name="subject"
-              placeholder="Digite o assunto"
+              // placeholder="Digite o assunto"
               type="text"
               value={subject}
               variant="faded"
@@ -121,8 +121,14 @@ export default function Contact() {
 
           <div className="w-full flex flex-col gap-2 sm:w-2/3">
             <Textarea
+              disableAnimation
+              disableAutosize
               required
               className="w-full"
+              classNames={{
+                base: "max-w-xxl",
+                input: "resize-y min-h-[40px]",
+              }}
               id="message"
               label="Mensagem"
               labelPlacement="outside"
