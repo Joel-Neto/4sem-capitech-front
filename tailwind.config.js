@@ -38,8 +38,8 @@ module.exports = {
       themes: {
         light: {
           colors: {
-            // foreground: "#FFFFFF",
-            danger: "#FB3535",
+            danger: "#cd0000",
+            // secondary: "#e5e7eb",
           },
         },
       },
