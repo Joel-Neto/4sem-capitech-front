@@ -19,7 +19,7 @@ export default function HeaderModal({ showAndCloseModal }: IHeaderModal) {
         <ul className="flex flex-col gap-2 text-md">
           {siteConfig.menuItems.map((link, i) => (
             <li key={`link-${i}`}>
-              <Link color="foreground" aria-busy href={link.href}>
+              <Link aria-busy href={link.href}>
                 {link.text}
               </Link>
             </li>
