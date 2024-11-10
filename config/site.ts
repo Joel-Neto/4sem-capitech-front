@@ -22,7 +22,7 @@ export const siteConfig = {
     },
     {
       text: "Login (Admin)",
-      href: "/admin",
+      href: "/login",
     },
     {
       text: "Cadastro (Admin)",
