@@ -173,7 +173,7 @@ export default function Home() {
                       <p className="text-3xl font-headline text-white font-bold transition duration-300 mb-2 hover:text-gray-200">
                         {trail.name}
                       </p>
-                      <Link href={`trails/${trail._id}`}>
+                      <Link href={`trilhas/${trail._id}`}>
                         <p className="text-center text-xl font-headline text-white font-bold underline transition duration-300 hover:text-gray-200">
                           {trail.subtitle}
                         </p>
