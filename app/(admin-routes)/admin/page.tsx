@@ -15,13 +15,14 @@ import {
   DropdownItem,
   DropdownMenu,
   DropdownTrigger,
+  Link,
 } from "@nextui-org/react";
 import { HiOutlineDotsHorizontal } from "react-icons/hi";
 import { FaRegEdit } from "react-icons/fa";
 import { MdDeleteOutline } from "react-icons/md";
 
 import api from "@/services/axios";
-import { Trail } from "@/types/Trail";
+import { IUpdateTrail } from "@/types/Trail";
 import useToast from "@/hooks/useToast";
 
 const columns = [
@@ -40,7 +41,7 @@ const columns = [
 ];
 
 export default function Admin() {
-  const [trails, setTrails] = useState<Trail[]>([]);
+  const [trails, setTrails] = useState<IUpdateTrail[]>([]);
 
   const { showSuccessToast, showErrorToast } = useToast();
 
@@ -73,40 +74,45 @@ export default function Admin() {
     }
   };
 
-  const renderCell = useCallback((trail: Trail, columnKey: React.Key) => {
-    const cellValue = trail[columnKey as keyof Trail];
+  const renderCell = useCallback(
+    (trail: IUpdateTrail, columnKey: React.Key) => {
+      const cellValue = trail[columnKey as keyof IUpdateTrail];
 
-    switch (columnKey) {
-      case "actions":
-        return (
-          <div className="relative flex justify-end items-center gap-2">
-            <Dropdown>
-              <DropdownTrigger>
-                <Button isIconOnly size="sm" variant="light">
-                  <HiOutlineDotsHorizontal size={20} />
-                </Button>
-              </DropdownTrigger>
-              <DropdownMenu>
-                <DropdownItem>
-                  <div className="flex gap-1 items-center justify-center">
-                    <span>Editar</span>
-                    <FaRegEdit />
-                  </div>
-                </DropdownItem>
-                <DropdownItem onClick={() => deleteTrail(trail._id)}>
-                  <div className="flex gap-1 items-center justify-center">
-                    <span>Deletar</span>
-                    <MdDeleteOutline />
-                  </div>
-                </DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
-          </div>
-        );
-      default:
-        return cellValue;
-    }
-  }, []);
+      switch (columnKey) {
+        case "actions":
+          return (
+            <div className="relative flex justify-end items-center gap-2">
+              <Dropdown>
+                <DropdownTrigger>
+                  <Button isIconOnly size="sm" variant="light">
+                    <HiOutlineDotsHorizontal size={20} />
+                  </Button>
+                </DropdownTrigger>
+                <DropdownMenu>
+                  <DropdownItem>
+                    <Link href={`/admin/trilhas/atualizar/${trail._id}`}>
+                      <div className="flex gap-1 items-center justify-center text-black">
+                        <span>Editar</span>
+                        <FaRegEdit />
+                      </div>
+                    </Link>
+                  </DropdownItem>
+                  <DropdownItem onClick={() => deleteTrail(trail._id)}>
+                    <div className="flex gap-1 items-center justify-center">
+                      <span>Deletar</span>
+                      <MdDeleteOutline />
+                    </div>
+                  </DropdownItem>
+                </DropdownMenu>
+              </Dropdown>
+            </div>
+          );
+        default:
+          return cellValue;
+      }
+    },
+    []
+  );
 
   return (
     <main className="container mx-auto max-w-5xl flex flex-col items-center justify-center gap-4 px-6 py-8 md:py-10">
