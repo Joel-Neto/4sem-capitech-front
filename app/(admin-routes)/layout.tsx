@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import React, { ReactNode } from "react";
 
 import { nextAuthOptions } from "@/lib/nextAuthOptions";
+import AdminBreadcrumb from "@/components/UI/molecules/breadCrumbs";
 
 interface IPrivateLayoutProps {
   children: ReactNode;
@@ -15,5 +16,10 @@ export default async function PrivateLayout({ children }: IPrivateLayoutProps) {
     return redirect("/login");
   }
 
-  return <>{children}</>;
+  return (
+    <>
+      <AdminBreadcrumb />
+      {children}
+    </>
+  );
 }
