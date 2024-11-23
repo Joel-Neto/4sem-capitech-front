@@ -29,7 +29,6 @@ export default function Contact() {
     if (!serviceID || !templateID || !publicKey) return;
 
     setLoading(true);
-
     
     emailjs
       .sendForm(serviceID, templateID, form.current, {
