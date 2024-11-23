@@ -34,7 +34,7 @@ const Sobre = () => {
         </h2>
       </section>
 
-      <section className="container flex flex-col items-center justify-center mx-auto max-w-5xl p-8">
+      <section className="container flex flex-col items-center justify-center mx-auto max-w-7xl p-8">
         {contents.map((content, index) => (
           <div
             key={index}
