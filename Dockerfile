@@ -20,7 +20,7 @@ COPY . .
 RUN npm install --only=dev
 
 # Construir a aplicação
-RUN npm run build || { cat /root/.npm/_logs/*-debug.log; echo 'Build falhou'; exit 1; }
+RUN npm run build
 
 # Expor a porta que a aplicação irá rodar
 EXPOSE 3000
