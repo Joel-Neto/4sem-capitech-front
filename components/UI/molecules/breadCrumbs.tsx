@@ -12,7 +12,7 @@ export default function AdminBreadcrumb() {
       text: "Trilhas",
     },
     {
-      link: "/admin/trilhas/novatrilha",
+      link: "/admin/trilhas/criar",
       text: "Nova trilha",
     },
     {
