@@ -112,7 +112,8 @@ jobs:
       - name: Criar imagem docker
         run: |
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/capitech-front:${{ env.new_version }} .
-          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/capitech-front:${{ env.new_version }} ${{ secrets.DOCKERHUB_USERNAME }}/fatec-dsm:latest
+
+          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/capitech-front:${{ env.new_version }} ${{ secrets.DOCKERHUB_USERNAME }}/capitech-front:latest
 
       - name: Efetuar push da imagem
         run: |

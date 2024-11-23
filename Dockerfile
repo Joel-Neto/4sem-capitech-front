@@ -1,4 +1,3 @@
-
 # Usar uma imagem base do Node.js
 FROM node:14
 
@@ -14,8 +13,11 @@ RUN npm install
 # Copiar o restante do código da aplicação
 COPY . .
 
+# Instalar dependências de construção
+RUN npm install --only=dev
+
 # Construir a aplicação
-RUN npm run build
+RUN npm run build || { echo 'Build falhou'; exit 1; }
 
 # Expor a porta que a aplicação irá rodar
 EXPOSE 3000
