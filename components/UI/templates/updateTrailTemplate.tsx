@@ -8,28 +8,26 @@ import { IUpdateTrail } from "@/types/Trail";
 import api from "@/services/axios";
 import useToast from "@/hooks/useToast";
 
-export default function AdminCreateTrail() {
+interface IUpdateTrailTemplateProps {
+  trail: IUpdateTrail;
+}
+
+export default function UpdateTrailTemplate({
+  trail,
+}: IUpdateTrailTemplateProps) {
   const { showSuccessToast, showErrorToast } = useToast();
 
   const formik = useFormik<IUpdateTrail>({
-    initialValues: {
-      _id: "",
-      name: "",
-      description: "",
-      references: "",
-      subtitle: "",
-      video_description: "",
-      video_title: "",
-      iframe_references: "",
-    },
+    initialValues: trail,
     // validationSchema: userSchema,
     onSubmit: async (values) => {
-      console.log(values);
       try {
-        const response = await api.post("/trilhas", values);
+        const { _id, ...updatedTrail } = values;
+
+        const response = await api.put(`/trilhas/${_id}`, updatedTrail);
 
         if (response.data.success) {
-          return showSuccessToast(response.data.message, "/login");
+          return showSuccessToast(response.data.message, "/admin");
         } else {
           showErrorToast(response.data.message);
         }
