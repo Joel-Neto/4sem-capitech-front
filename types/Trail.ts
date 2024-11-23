@@ -18,3 +18,7 @@ export interface ICreateTrail {
   video_title: string;
   iframe_references: string;
 }
+
+export interface IGetTrail {
+  data: IUpdateTrail;
+}
