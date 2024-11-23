@@ -44,7 +44,6 @@ export default function Contact() {
           }, 10 * 1000);
         },
         (error: Error) => {
-          // console.log("EMAIL FAILED:", error);
           setError(true);
           setLoading(false);
         }

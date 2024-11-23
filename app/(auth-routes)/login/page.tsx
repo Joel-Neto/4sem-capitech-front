@@ -43,8 +43,6 @@ export default function LoginPage() {
     },
   });
 
-  console.log(formik.errors);
-
   return (
     <main className="py-8 px-4">
       <div className="container mx-auto max-w-5xl flex justify-center items-center">
