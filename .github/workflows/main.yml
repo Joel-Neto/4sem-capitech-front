@@ -103,18 +103,18 @@ jobs:
           git tag v${{ env.new_version }}
           git push origin main --tags
 
-          - name: Efetuar login no docker hub
-            uses: docker/login-action@v2
-            with:
-              username: ${{ secrets.DOCKERHUB_USERNAME }}
-              password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Efetuar login no docker hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-          - name: Criar imagem docker
-            run: |
-              docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/capitech-front:${{ env.new_version }} .
-              docker tag ${{ secrets.DOCKERHUB_USERNAME }}/capitech-front:${{ env.new_version }} ${{ secrets.DOCKERHUB_USERNAME }}/fatec-dsm:latest
+      - name: Criar imagem docker
+        run: |
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/capitech-front:${{ env.new_version }} .
+          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/capitech-front:${{ env.new_version }} ${{ secrets.DOCKERHUB_USERNAME }}/capitech-front:latest
 
-          - name: Efetuar push da imagem
-            run: |
-              docker push ${{ secrets.DOCKERHUB_USERNAME }}/capitech-front:${{ env.new_version }}
-              docker push ${{ secrets.DOCKERHUB_USERNAME }}/capitech-front:latest
+      - name: Efetuar push da imagem
+        run: |
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/capitech-front:${{ env.new_version }}
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/capitech-front:latest
