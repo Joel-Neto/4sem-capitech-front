@@ -29,7 +29,7 @@ export default function Contact() {
     if (!serviceID || !templateID || !publicKey) return;
 
     setLoading(true);
-
+    
     emailjs
       .sendForm(serviceID, templateID, form.current, {
         publicKey: publicKey,
@@ -51,6 +51,7 @@ export default function Contact() {
       );
   };
 
+  
   return (
     <>
       <section className="relative bg-capi_gray_contact flex items-center justify-center gap-8 p-8">
