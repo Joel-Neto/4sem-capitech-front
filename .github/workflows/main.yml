@@ -65,11 +65,11 @@ jobs:
           
           # Analisando mensagens de commit
           for COMMIT in "$COMMITS"; do
-            if [[ "$COMMIT" == *"BREAKING CHANGE"* ]]; then
+            if [[ "${COMMIT,,}" == *"BREAKING CHANGE"* ]]; then
               MAJOR=1
-            elif [[ "$COMMIT" == *"feat"* ]]; then
+            elif [[ "${COMMIT,,}" == *"feat"* ]]; then
               MINOR=1
-            elif [[ "$COMMIT" == *"fix"* ]]; then
+            elif [[ "${COMMIT,,}" == *"fix"* ]]; then
               PATCH=1
             fi
           done
