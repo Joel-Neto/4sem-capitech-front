@@ -30,6 +30,7 @@ export default function Contact() {
 
     setLoading(true);
 
+    
     emailjs
       .sendForm(serviceID, templateID, form.current, {
         publicKey: publicKey,
