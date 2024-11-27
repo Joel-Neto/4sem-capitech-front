@@ -7,6 +7,7 @@ import { Button } from "@nextui-org/button";
 import { ICreateTrail } from "@/types/Trail";
 import api from "@/services/axios";
 import useToast from "@/hooks/useToast";
+import { createTrailSchema } from "@/validations/trail.schema";
 
 export default function AdminCreateTrail() {
   const { showSuccessToast, showErrorToast } = useToast();
@@ -21,14 +22,14 @@ export default function AdminCreateTrail() {
       video_title: "",
       iframe_references: "",
     },
-    // validationSchema: userSchema,
+    validationSchema: createTrailSchema,
     onSubmit: async (values) => {
       console.log(values);
       try {
         const response = await api.post("/trilhas", values);
 
         if (response.data.success) {
-          return showSuccessToast(response.data.message, "/admin");
+          return showSuccessToast(response.data.message, "/login");
         } else {
           showErrorToast(response.data.message);
         }

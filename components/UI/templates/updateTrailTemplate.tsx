@@ -7,6 +7,7 @@ import { Button } from "@nextui-org/button";
 import { IUpdateTrail } from "@/types/Trail";
 import api from "@/services/axios";
 import useToast from "@/hooks/useToast";
+import { updateTrailSchema } from "@/validations/trail.schema";
 
 interface IUpdateTrailTemplateProps {
   trail: IUpdateTrail;
@@ -19,7 +20,7 @@ export default function UpdateTrailTemplate({
 
   const formik = useFormik<IUpdateTrail>({
     initialValues: trail,
-    // validationSchema: userSchema,
+    validationSchema: updateTrailSchema,
     onSubmit: async (values) => {
       try {
         const { _id, ...updatedTrail } = values;
