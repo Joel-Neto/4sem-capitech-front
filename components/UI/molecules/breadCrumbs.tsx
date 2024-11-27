@@ -20,7 +20,7 @@ export default function AdminBreadcrumb() {
       text: "Área de desenvolvimento",
     },
     {
-      link: "/admin/usuario",
+      link: "/admin/perfil",
       text: "Usuário",
     },
   ];
