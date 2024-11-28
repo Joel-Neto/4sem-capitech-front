@@ -29,7 +29,7 @@ export default function AdminCreateTrail() {
         const response = await api.post("/trilhas", values);
 
         if (response.data.success) {
-          return showSuccessToast(response.data.message, "/login");
+          return showSuccessToast(response.data.message, "/admin");
         } else {
           showErrorToast(response.data.message);
         }
