@@ -14,13 +14,9 @@ export const nextAuthOptions: NextAuthOptions = {
       async authorize(credentials, req) {
         if (!credentials) return null;
 
-        console.log(credentials);
-
         const response = await api.post("/login", credentials);
 
         const userData = await response.data.data;
-
-        console.log(userData);
 
         if (userData && response.status === 200) {
           return userData;
