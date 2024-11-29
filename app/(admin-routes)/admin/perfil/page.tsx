@@ -11,6 +11,7 @@ import api from "@/services/axios";
 import { IEditUser } from "@/types/User";
 import { EyeSlashFilledIcon } from "@/components/icons/eyeSlashFilledIcon";
 import { EyeFilledIcon } from "@/components/icons/eyeFilledIcon";
+import { updateUserSchema } from "@/validations/user.schema";
 
 export default function AdminProfilePage() {
   const { data } = useSession();
@@ -28,7 +29,7 @@ export default function AdminProfilePage() {
       name: "",
       password: "",
     },
-    // validationSchema: userSchema,
+    validationSchema: updateUserSchema,
     onSubmit: async (values) => {
       try {
         const { _id, ...userData } = values;
