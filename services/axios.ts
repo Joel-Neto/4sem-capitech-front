@@ -2,7 +2,7 @@ import axios from "axios";
 import { getSession } from "next-auth/react";
 
 const api = axios.create({
-  baseURL: "http://localhost:4000",
+  baseURL: "https://4sem-capitech-api.vercel.app/",
 });
 
 api.interceptors.request.use(async (request) => {
