@@ -5,6 +5,12 @@ export interface IUser {
   adminCode: string;
 }
 
+export interface IUpdateUser {
+  name: string;
+  email: string;
+  password?: string;
+}
+
 export interface IEditUser {
   _id: string;
   name: string;

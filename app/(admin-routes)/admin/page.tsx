@@ -90,15 +90,16 @@ export default function Admin() {
                 </DropdownTrigger>
                 <DropdownMenu>
                   <DropdownItem>
-                    <Link href={`/admin/trilhas/atualizar/${trail._id}`}>
-                      <div className="flex gap-1 items-center justify-center text-black">
-                        <span>Editar</span>
-                        <FaRegEdit />
-                      </div>
+                    <Link
+                      href={`/admin/trilhas/atualizar/${trail._id}`}
+                      className="flex gap-1 items-center justify-center text-black"
+                    >
+                      <span>Editar</span>
+                      <FaRegEdit />
                     </Link>
                   </DropdownItem>
                   <DropdownItem onClick={() => deleteTrail(trail._id)}>
-                    <div className="flex gap-1 items-center justify-center">
+                    <div className="flex gap-1 items-center justify-center text-medium">
                       <span>Deletar</span>
                       <MdDeleteOutline />
                     </div>
