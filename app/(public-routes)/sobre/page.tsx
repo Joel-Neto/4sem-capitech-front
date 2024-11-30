@@ -29,9 +29,9 @@ const Sobre = () => {
           width={64}
           height={64}
         />
-        <h2 className="font-headline font-semibold text-white text-4xl">
+        <h1 className="font-headline font-semibold text-white text-4xl">
           Sobre nós
-        </h2>
+        </h1>
       </section>
 
       <section className="container flex flex-col items-center justify-center mx-auto max-w-7xl p-8">
