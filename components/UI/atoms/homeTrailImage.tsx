@@ -9,8 +9,10 @@ export const HomeTrailImage = ({ trailName }: IHomeTrailImageProps) => {
     switch (name.toLowerCase()) {
       case "html5":
         return "/assets/trails/html.png";
+      case "html":
+        return "/assets/trails/html.png";
       case "javascript":
-        return "/assets/trailsjavascript.png";
+        return "/assets/trails/javascript.png";
       case "css":
         return "/assets/trails/css.png";
       case "sql":

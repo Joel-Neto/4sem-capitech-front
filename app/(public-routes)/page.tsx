@@ -144,7 +144,12 @@ export default function Home() {
         </section>
 
         <div className="mt-10 mb-8 flex justify-center items-center">
-          <Button color="danger">
+          <Button
+            as={Link}
+            className="text-white"
+            color="danger"
+            href="/vestibular"
+          >
             <span>Conheça a FATEC</span>
             <FaArrowRight />
           </Button>
