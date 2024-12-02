@@ -77,20 +77,23 @@ export default function UpdateTrailTemplate({
             variant="faded"
             onChange={formik.handleChange}
           />
-          <Input
-            color="default"
+
+          <Textarea
+            disableAutosize
+            classNames={{
+              base: "w-full",
+              input: "resize-y min-h-[200px]",
+            }}
             errorMessage={
               formik.touched.description && formik.errors.description
             }
             isInvalid={
               formik.touched.description && !!formik.errors.description
             }
-            label="Conteúdo"
+            label="Conteúdo da Trilha"
             labelPlacement="outside"
             name="description"
             placeholder="Digite o conteúdo"
-            size="lg"
-            type="text"
             value={formik.values.description}
             variant="faded"
             onChange={formik.handleChange}
@@ -118,7 +121,7 @@ export default function UpdateTrailTemplate({
             disableAutosize
             classNames={{
               base: "w-full",
-              input: "resize-y min-h-[200px]",
+              input: "resize-y min-h-[80px]",
             }}
             errorMessage={
               formik.touched.video_description &&
