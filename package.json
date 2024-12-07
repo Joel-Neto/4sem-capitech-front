@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "@nextui-org/breadcrumbs": "^2.0.13",
+    "@hotjar/browser": "^1.0.9",
     "@nextui-org/button": "2.0.38",
     "@nextui-org/card": "^2.0.34",
     "@nextui-org/code": "2.0.33",
