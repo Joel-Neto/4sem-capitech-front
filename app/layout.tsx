@@ -9,7 +9,7 @@ import { Metadata, Viewport } from "next";
 
 import { Providers } from "./providers";
 
-import hotjar from "@hotjar/browser";
+import HotjarSnippet from "@/components/hotjar/hotjarComponent";
 
 export const metadata: Metadata = {
   title: {
@@ -29,11 +29,6 @@ export const viewport: Viewport = {
   ],
 };
 
-const HOTJAR_ID = 5234029;
-const HOTJAR_VERSION = 6;
-
-hotjar.init(HOTJAR_ID, HOTJAR_VERSION);
-
 export default function RootLayout({
   children,
 }: {
@@ -50,11 +45,12 @@ export default function RootLayout({
         <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
           <div className="relative flex flex-col h-screen">
             <Header />
-            {/* container mx-auto max-w-7xl pt-16  */}
             <main className=" flex-grow">{children}</main>
             <Footer />
           </div>
         </Providers>
+
+        <HotjarSnippet />
       </body>
     </html>
   );
