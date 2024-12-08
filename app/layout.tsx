@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning lang="en">
       <head>
-        <Script strategy="lazyOnload" />
+        <Script strategy="lazyOnload" >
           {`(function(h,o,t,j,a,r){
                 h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
                 h._hjSettings={hjid:5234029,hjsv:6};
@@ -46,7 +46,7 @@ export default function RootLayout({
                 r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
                 a.appendChild(r);
             })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');`}
-        />
+        </Script>
       </head>
       <body
         className={clsx(
