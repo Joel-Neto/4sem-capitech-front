@@ -2,9 +2,8 @@ import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import { Link } from "@nextui-org/link";
 import clsx from "clsx";
-import hotjar from "../hooks/hotjar";
 import { useEffect } from "react";
-
+import Hotjar from "@hotjar/browser";
 import { Providers } from "./providers";
 
 import { siteConfig } from "@/config/site";
@@ -37,10 +36,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   useEffect(() => {
-    hotjar({
-      id: "5234029",
-      sdk: "6",
-    });
+    const siteId = 5234029;
+    const hotjarVersion = 6;
+
+    Hotjar.init(siteId, hotjarVersion);
   }, []);
   return (
     <html suppressHydrationWarning lang="en">
