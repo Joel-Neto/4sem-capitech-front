@@ -1,15 +1,12 @@
-import "@/styles/globals.css";
-import { Metadata, Viewport } from "next";
-import { Link } from "@nextui-org/link";
-import clsx from "clsx";
-import { useEffect } from "react";
-import { Providers } from "./providers";
-import Script from "next/script";
-import { siteConfig } from "@/config/site";
-import { fontSans } from "@/config/fonts";
-import { Navbar } from "@/components/navbar";
-import Header from "@/components/UI/organisms/header";
 import Footer from "@/components/UI/organisms/footer";
+import Header from "@/components/UI/organisms/header";
+import { fontSans } from "@/config/fonts";
+import { siteConfig } from "@/config/site";
+import "@/styles/globals.css";
+import clsx from "clsx";
+import { Metadata, Viewport } from "next";
+import Script from "next/script";
+import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   title: {
@@ -37,21 +34,27 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning lang="en">
       <head>
-        <Script strategy="lazyOnload" >
-          {`(function(h,o,t,j,a,r){
+        <Script
+          id="HotjarAnalytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(h,o,t,j,a,r){
                 h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
                 h._hjSettings={hjid:5234029,hjsv:6};
                 a=o.getElementsByTagName('head')[0];
                 r=o.createElement('script');r.async=1;
                 r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
                 a.appendChild(r);
-            })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');`}
-        </Script>
+            })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+              `,
+          }}
+        />
       </head>
       <body
         className={clsx(
           "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable,
+          fontSans.variable
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
