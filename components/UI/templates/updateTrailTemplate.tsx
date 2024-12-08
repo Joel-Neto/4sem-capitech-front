@@ -33,7 +33,7 @@ export default function UpdateTrailTemplate({
           showErrorToast(response.data.message);
         }
       } catch (error: any) {
-        showErrorToast(`Erro ao criar usuário.`);
+        showErrorToast(`Erro atualizar trilha.`);
       }
     },
   });
