@@ -89,7 +89,7 @@ export default function Admin() {
                   </Button>
                 </DropdownTrigger>
                 <DropdownMenu>
-                  <DropdownItem>
+                  <DropdownItem key={`edit-${trail._id}`}>
                     <Link
                       href={`/admin/trilhas/atualizar/${trail._id}`}
                       className="flex gap-1 items-center justify-center text-black"
@@ -98,7 +98,10 @@ export default function Admin() {
                       <FaRegEdit />
                     </Link>
                   </DropdownItem>
-                  <DropdownItem onClick={() => deleteTrail(trail._id)}>
+                  <DropdownItem
+                    key={`delete-${trail._id}`}
+                    onClick={() => deleteTrail(trail._id)}
+                  >
                     <div className="flex gap-1 items-center justify-center text-medium">
                       <span>Deletar</span>
                       <MdDeleteOutline />
