@@ -9,8 +9,7 @@ import { Metadata, Viewport } from "next";
 
 import { Providers } from "./providers";
 
-// import HotjarSnippet from "@/components/hotjar/hotjarComponent";
-import Hotjar from "@hotjar/browser";
+import HotjarInitializer from "@/components/hotjar/hotjarInitializer";
 
 export const metadata: Metadata = {
   title: {
@@ -30,13 +29,6 @@ export const viewport: Viewport = {
   ],
 };
 
-// Substitua 'YOUR_HOTJAR_ID' e 'YOUR_HOTJAR_VERSION' pelos valores fornecidos pela sua conta do Hotjar
-const HOTJAR_ID = 5234029;
-const HOTJAR_VERSION = 6;
-
-// Inicializa o Hotjar
-Hotjar.init(HOTJAR_ID, HOTJAR_VERSION);
-
 export default function RootLayout({
   children,
 }: {
@@ -50,6 +42,7 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
+        <HotjarInitializer />
         <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
           <div className="relative flex flex-col h-screen">
             <Header />
